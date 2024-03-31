@@ -9,7 +9,7 @@ class Product(models.Model) :
     # sku = models.CharField(max_length = 255, primary_key = True)   if dont want django to automatically provide a id  attribute with primarty key option by default
     title = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.DecimalField(max_digit = 6, decimal = 2)
+    price = models.DecimalField(max_digits = 6, decimal_places = 2)
     inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now = True)
     collection = models.ForeignKey('Collection', on_delete = models.PROTECT)
@@ -30,7 +30,7 @@ class  Customer(models.Model) :
     birth_day = models.DateField(null = True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length = 255)
-    email = models.models.EmailField(max_length=254, unique = True)
+    email = models.EmailField(max_length=254, unique = True)
     membership = models.CharField(max_length = 1, choices = MEMBERSHIP_CHOICES, default = MEMBERSHIP_BRONZE)
 
 
@@ -71,4 +71,4 @@ class OrderItem (models.Model) :
 
 class Collection (models.Model) : 
     title = models.CharField(max_length = 255)
-    featured_product = models.ForeignKey('Product',  on_delete = models.SET_NULL, null =True, related_name = '+')
+    featured_product = models.ForeignKey('Product',  on_delete = models.SET_NULL, null =True, related_name = '+' )
