@@ -8,6 +8,7 @@ class Promotion (models.Model) :
 class Product(models.Model) :
     # sku = models.CharField(max_length = 255, primary_key = True)   if dont want django to automatically provide a id  attribute with primarty key option by default
     title = models.CharField(max_length=255)
+    slug = models.SlugField(default = '-')
     description = models.TextField()
     price = models.DecimalField(max_digits = 6, decimal_places = 2)
     inventory = models.IntegerField()
