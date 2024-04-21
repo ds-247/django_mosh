@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class TagConfig(AppConfig):
+class LikeConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'tag'
+    name = 'likes'
